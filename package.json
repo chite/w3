@@ -64,5 +64,6 @@
     "last 2 versions",
     "last 3 iOS versions",
     "not ie <= 8"
-  ]
+  ],
+  "homepage": "https://chite.github.io/f2e/"
 }
