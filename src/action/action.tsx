@@ -1,0 +1,11 @@
+export const toAdd = (keys: string, values: number) => ({ type: 'postData', value: values, key: keys });
+export const chooseSong = (value: number) => ({ type: 'chooseMusic', index: value })
+export const toggleSong = () => ({ type: 'togglePlay' })
+export const startSong = () => ({ type: 'startSong' })
+export const pauseSong = () => ({ type: 'pauseSong' })
+export const follow = () => ({ type: 'follow' })
+export const updateMode = (value: string) => ({ type: 'updateMode', message: value })
+export const changeAlbum = (value: number) => ({ type: 'changeAlbum', index: value })
+export const premium = () => ({ type: 'goPremium' })
+export const handleAdvertise = (value: boolean) => ({ type: 'changeAdvertiseState', state: value })
+export const handleBar = (value: boolean) => ({ type: 'changeBarState', state: value })
