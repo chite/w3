@@ -25,7 +25,7 @@ function Main(props: any) {
         <article className="box main">
             <section className="box--6">
                 <div className="background-light main__bg"></div>
-                <img src={`http://localhost:9000/src/source/${albumData().singer}/head.jpg`} className="img--f main__img" alt="main picture" />
+                <img src={`https://raw.githubusercontent.com/chite/f2e/master/src/source/${albumData().singer}/head.jpg`} className="img--f main__img" alt="main picture" />
                 <h1 className="main__title">{albumData().singer}</h1>
                 <div className="box main__addition">
                     <div className="box--4c">
@@ -52,7 +52,7 @@ function Main(props: any) {
                             albumData().songs.map((val: SongType, index: number) => (
                                 <ul className="topSong-list__item" key={val.name}>
                                     <li>{index + 1}</li>
-                                    <li><img src={`http://localhost:9000/src/source/${albumData().singer}/${val.pt}`} className="img--f topSong-list__img" /></li>
+                                    <li><img src={`https://raw.githubusercontent.com/chite/f2e/master/src/source/${albumData().singer}/${val.pt}`} className="img--f topSong-list__img" /></li>
                                     <li>{val.name}</li>
                                     <li>{`${Math.floor(val.duration / 60)}:${('0' + (val.duration % 60)).slice(-2)}`}</li>
                                     <li onClick={() => props.handleAudio.clickSong(index)}><FontAwesomeIcon icon={(props.state.playing[1] == index && !props.state.suspended) ? faPause : faPlay} /></li>
@@ -63,7 +63,7 @@ function Main(props: any) {
                     <h2>New Release</h2>
                     <div className="box">
                         <div className="box--4c">
-                            <img src={`http://localhost:9000/src/source/${albumData().singer}/${albumData().songs[albumData().latest].pt}`} className="album-img img--f" alt="new release" />
+                            <img src={`https://raw.githubusercontent.com/chite/f2e/master/src/source/${albumData().singer}/${albumData().songs[albumData().latest].pt}`} className="album-img img--f" alt="new release" />
                         </div>
                         <div className="box--8c background-light center-column">
                             <h4 className="text-center">{albumData().songs[albumData().latest].name}</h4>
@@ -80,7 +80,7 @@ function Main(props: any) {
                                 onClick={()=>handleChangeAlbum(index)}
                                 >
                                     <li>
-                                        <img src={`http://localhost:9000/src/source/${val.singer}/head.jpg`} className="cards__img img--f" alt="new release" />
+                                        <img src={`https://raw.githubusercontent.com/chite/f2e/master/src/source/${val.singer}/head.jpg`} className="cards__img img--f" alt="new release" />
                                     </li>
                                     <li className="cards__title">{val.singer}</li>
                                     <li className="cards__subtitle">{val.info.slice(0,4)}</li>

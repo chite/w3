@@ -9,7 +9,7 @@ function Album(){
         <article className="box main">
             <section className="box--6">
                 <div className="background-light main__bg"></div>
-                <img src="http://localhost:9000/src/source/pt1.jpg" className="img--f main__img" alt="main picture" />
+                <img src="https://raw.githubusercontent.com/chite/f2e/master/src/source/pt1.jpg" className="img--f main__img" alt="main picture" />
                 <h1 className="main__title">But I must explain to You (Deluxe)</h1>
                 <div className="box main__addition">
                     <div className="box--4c">
@@ -26,42 +26,42 @@ function Album(){
                     <ul className="topSong-list topSong-list--l">
                         <ul className="topSong-list__item">
                             <li>1</li>
-                            <li><img src="http://localhost:9000/src/source/pt2.jpg" className="img--f topSong-list__img" /></li>
+                            <li><img src="https://raw.githubusercontent.com/chite/f2e/master/src/source/pt2.jpg" className="img--f topSong-list__img" /></li>
                             <li>Great Pleasure</li>
                             <li>5:34</li>
                             <li><FontAwesomeIcon icon={faPlay} /></li>
                         </ul>
                         <ul className="topSong-list__item">
                             <li>1</li>
-                            <li><img src="http://localhost:9000/src/source/pt2.jpg" className="img--f topSong-list__img" /></li>
+                            <li><img src="https://raw.githubusercontent.com/chite/f2e/master/src/source/pt2.jpg" className="img--f topSong-list__img" /></li>
                             <li>Great Pleasure</li>
                             <li>5:34</li>
                             <li><FontAwesomeIcon icon={faPause} /></li>
                         </ul>
                         <ul className="topSong-list__item">
                             <li>1</li>
-                            <li><img src="http://localhost:9000/src/source/pt2.jpg" className="img--f topSong-list__img" /></li>
+                            <li><img src="https://raw.githubusercontent.com/chite/f2e/master/src/source/pt2.jpg" className="img--f topSong-list__img" /></li>
                             <li>Great Pleasure</li>
                             <li>5:34</li>
                             <li><FontAwesomeIcon icon={faPlay} /></li>
                         </ul>
                         <ul className="topSong-list__item">
                             <li>1</li>
-                            <li><img src="http://localhost:9000/src/source/pt2.jpg" className="img--f topSong-list__img" /></li>
+                            <li><img src="https://raw.githubusercontent.com/chite/f2e/master/src/source/pt2.jpg" className="img--f topSong-list__img" /></li>
                             <li>Great Pleasure</li>
                             <li>5:34</li>
                             <li><FontAwesomeIcon icon={faPlay} /></li>
                         </ul>
                         <ul className="topSong-list__item">
                             <li>1</li>
-                            <li><img src="http://localhost:9000/src/source/pt2.jpg" className="img--f topSong-list__img" /></li>
+                            <li><img src="https://raw.githubusercontent.com/chite/f2e/master/src/source/pt2.jpg" className="img--f topSong-list__img" /></li>
                             <li>Great Pleasure</li>
                             <li>5:34</li>
                             <li><FontAwesomeIcon icon={faPlay} /></li>
                         </ul>
                         <ul className="topSong-list__item">
                             <li>1</li>
-                            <li><img src="http://localhost:9000/src/source/pt2.jpg" className="img--f topSong-list__img" /></li>
+                            <li><img src="https://raw.githubusercontent.com/chite/f2e/master/src/source/pt2.jpg" className="img--f topSong-list__img" /></li>
                             <li>Great Pleasure</li>
                             <li>5:34</li>
                             <li><FontAwesomeIcon icon={faPlay} /></li>
@@ -76,21 +76,21 @@ function Album(){
                     <ul className="cards">
                         <ul className="cards__item">
                             <li>
-                                <img src="http://localhost:9000/src/source/pt2.jpg" className="cards__img img--f" alt="new release" />
+                                <img src="https://raw.githubusercontent.com/chite/f2e/master/src/source/pt2.jpg" className="cards__img img--f" alt="new release" />
                             </li>
                             <li className="cards__title">Itself</li>
                             <li className="cards__subtitle">2018</li>
                         </ul>
                         <ul className="cards__item">
                             <li>
-                                <img src="http://localhost:9000/src/source/pt2.jpg" className="cards__img img--f" alt="new release" />
+                                <img src="https://raw.githubusercontent.com/chite/f2e/master/src/source/pt2.jpg" className="cards__img img--f" alt="new release" />
                             </li>
                             <li className="cards__title">Itself</li>
                             <li className="cards__subtitle">2018</li>
                         </ul>
                         <ul className="cards__item">
                             <li>
-                                <img src="http://localhost:9000/src/source/pt2.jpg" className="cards__img img--f" alt="new release" />
+                                <img src="https://raw.githubusercontent.com/chite/f2e/master/src/source/pt2.jpg" className="cards__img img--f" alt="new release" />
                             </li>
                             <li className="cards__title">Itself</li>
                             <li className="cards__subtitle">2018</li>

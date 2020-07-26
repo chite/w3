@@ -37,7 +37,7 @@ function Bar(props: any) {
                 </span>
                 <div className="box--2c">
                     <img
-                        src={`http://localhost:9000/src/source/${albumData().singer}/song0${props.state.playing[1] + 1}.jpg`}
+                        src={`https://raw.githubusercontent.com/chite/f2e/master/src/source/${albumData().singer}/song0${props.state.playing[1] + 1}.jpg`}
                         className="bar__img img--f"
                         alt="playing"
                     />

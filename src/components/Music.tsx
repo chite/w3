@@ -48,7 +48,7 @@ function Music(props: any) {
     return (
         <article
             className="text-center color-light music"
-            style={{ 'background': 'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(http://localhost:9000/src/source/pt2.jpg)' }}
+            style={{ 'background': 'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://raw.githubusercontent.com/chite/f2e/master/src/source/pt2.jpg)' }}
         >
             {
                 props.state.openAdvertise &&
@@ -70,7 +70,7 @@ function Music(props: any) {
                 <section className="box bar--w">
                     <div className="box--2c">
                         <img
-                            src={`http://localhost:9000/src/source/${albumData().singer}/song0${props.state.playing[1] + 1}.jpg`}
+                            src={`https://raw.githubusercontent.com/chite/f2e/master/src/source/${albumData().singer}/song0${props.state.playing[1] + 1}.jpg`}
                             className="bar__img img--f"
                             alt="playing"
                         />

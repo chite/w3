@@ -54,7 +54,7 @@ const App = (props: any) => {
     function chooseMusic(index: number) {
         if (!audio) return;
         const albumData = props.state.albums[props.state.playing[0]];
-        audio.src = `http://localhost:9000/src/source/${albumData.singer}/${albumData.singer}-${albumData.songs[index].name}.mp3`;
+        audio.src = `https://raw.githubusercontent.com/chite/f2e/master/src/source/${albumData.singer}/${albumData.singer}-${albumData.songs[index].name}.mp3`;
         audio.load();
         props.choose(index);
     }
@@ -133,7 +133,7 @@ const App = (props: any) => {
 
     }
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/f2e/public">
             <>
                 <Route exact path="/" render={() => <Main handleAudio={handleAudio} />}></Route>
                 <Route exact path="/album" render={() => <Album />}></Route>
