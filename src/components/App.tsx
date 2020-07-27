@@ -132,8 +132,8 @@ const App = (props: any) => {
 
     }
     return (
-        <BrowserRouter basename="/f2e/public">
-        {/* <BrowserRouter> */}
+        // <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <>
                 <Route exact path="/" render={() => <Main handleAudio={handleAudio} />}></Route>
                 <Bar handleAudio={handleAudio} />
