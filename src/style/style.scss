@@ -10,7 +10,7 @@
   &__img {
     width: 80%;
     height: auto;
-    max-height: 40vh;
+    max-height: 60vmin;
     position: absolute;
     top: 10px;
     left: 0;
@@ -23,7 +23,7 @@
   }
   &__title {
     width: 80%;
-    margin-top: 9vh;
+    margin-top: 10vmin;
     margin-bottom: 1rem;
     padding-bottom: .25rem;
     left: 50%;
@@ -40,7 +40,7 @@
     font-size: 1.25rem;
     margin: 0.25rem 0;
     &--s {
-      font-size: 0.1rem;
+      font-size: 1rem;
     }
   }
   &__submit {
@@ -507,12 +507,9 @@
 @media only screen and (min-width: 576px) {
   .main {
     &__img {
-      max-height: 60vh;
-      right: 0;
       top: 5%;
     }
     &__title {
-      margin-top: 6vh;
       margin-left: 10%;
       font-size: 3rem;
       position: static;

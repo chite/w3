@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Main from './Main';
-import Album from './Album';
 import Music from './Music';
 import Bar from './Bar';
 import { toggleSong, chooseSong, startSong, pauseSong, updateMode, handleAdvertise, handleBar } from '../action/action';
@@ -134,12 +133,10 @@ const App = (props: any) => {
     }
     return (
         <BrowserRouter basename="/f2e/public">
+        {/* <BrowserRouter> */}
             <>
                 <Route exact path="/" render={() => <Main handleAudio={handleAudio} />}></Route>
-                <Route exact path="/album" render={() => <Album />}></Route>
-                <Bar
-                    handleAudio={handleAudio}
-                />
+                <Bar handleAudio={handleAudio} />
             </>
             <Route exact path="/music" render={() => <Music handleAudio={handleAudio} />}></Route>
         </BrowserRouter>
