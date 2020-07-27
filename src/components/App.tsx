@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Main from './Main';
 import Music from './Music';
@@ -133,13 +133,13 @@ const App = (props: any) => {
     }
     return (
         // <BrowserRouter>
-        <BrowserRouter basename={process.env.PUBLIC_URL + '/f2e/public'}>
+        <HashRouter basename="/f2e/public">
             <>
                 <Route exact path="/" render={() => <Main handleAudio={handleAudio} />}></Route>
                 <Bar handleAudio={handleAudio} />
             </>
             <Route exact path="/music" render={() => <Music handleAudio={handleAudio} />}></Route>
-        </BrowserRouter>
+        </HashRouter>
     )
 };
 
