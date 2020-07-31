@@ -88,4 +88,5 @@ function Bar(props: any) {
     )
 }
 
+export {Bar};
 export default connect(mapStateToProps, mapDispatchToProps)(Bar);

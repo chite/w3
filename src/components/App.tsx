@@ -38,73 +38,83 @@ const App = (props: any) => {
 
     useEffect(() => {
         let counter = setInterval(() => {
-            setCounting(Math.floor(audio.currentTime));
+            setCounting(() => Math.floor(audio.currentTime));
         }, 1000);
         return () => clearInterval(counter);
-    });
+    }, []);
 
-    function clearMusic() {
-        if (audio) {
+    function clearMusic(): string {
+        if (audio.src) {
+            const url = audio.src;
             audio.pause();
             audio.src = '';
             props.pause();
+            return url;
         }
+        return '';
     }
-    function chooseMusic(index: number) {
-        if (!audio) return;
+    function chooseMusic(index: number): string {
+        if (!audio) return '';
         const albumData = props.state.albums[props.state.playing[0]];
         audio.src = `https://raw.githubusercontent.com/chite/f2e/master/src/source/${albumData.singer}/${albumData.singer}-${albumData.songs[index].name}.mp3`;
         audio.load();
         props.choose(index);
+        return audio.src;
     }
     function toggleMusic() {
         if (props.state.suspended) {
             startMusic();
+            return 1;
         } else {
             pauseMusic();
             //廣告
             if (props.state.advertise) props.advertise(true);
+            return 0;
         }
     }
     function pauseMusic() {
-        if (audio) audio.pause();
+        if (audio.src) audio.pause();
         props.pause();
     }
     function startMusic() {
-        if (audio) audio.play();
+        if (audio.src) audio.play();
         props.start();
         //打開 Bar
         props.bar(true);
     }
-    function handleChangeAlbum() {
-        clearMusic();
-        chooseMusic(0);
+    function handleChangeAlbum(): string[] {
+        const preUrl = clearMusic();
+        const nextUrl = chooseMusic(0);
+        return [preUrl, nextUrl]
     }
-    function clickSong(index: number) {
+    function clickSong(index: number): number | string {
         if (index === props.state.playing[1] && audio.src) {
             //切換暫停/開始
-            toggleMusic();
+            return toggleMusic();
         } else {
             // 換歌
             clearMusic();
             chooseMusic(index);
             startMusic();
+            return audio.src;
         }
     }
     function handleSound(value: number) {
         audio.volume = value;
+        return audio.volume;
     }
     function handleDuration(second: number) {
         audio.currentTime = second;
+        return audio.currentTime;
     }
-    function handleState(mode: string) {
+    function handleState(mode: string) : string | void{
         switch (mode) {
             case 'none':
                 props.updateMode('none');
                 audio.onended = function () {
                     props.pause();
                 }
-                break;
+                return 'none';
             case 'random':
                 props.updateMode('random');
                 audio.onended = function () {
@@ -114,7 +124,7 @@ const App = (props: any) => {
                     chooseMusic(nextSongIndex);
                     startMusic();
                 }
-                break;
+                return 'random';
             case 'cycle':
                 props.updateMode('cycle');
                 audio.onended = function () {
@@ -125,14 +135,14 @@ const App = (props: any) => {
                     chooseMusic(index);
                     startMusic();
                 }
-                break;
+                return 'cycle';
             default:
                 break;
         }
 
     }
     return (
-        // <BrowserRouter>
+        // <HashRouter>
         <HashRouter basename="/f2e/public">
             <>
                 <Route exact path="/" render={() => <Main handleAudio={handleAudio} />}></Route>

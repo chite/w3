@@ -3,8 +3,8 @@ import { Action } from '../constant/type';
 
 const reducer = (data = state, action: Action) => {
     switch (action.type) {
-        case 'chooseMusic':
-            if (action.index !== data.playing[1]) {
+        case 'CHOOSE_MUSIC':
+            if (action.index !== data.playing[1] && action.index !== undefined) {
                 const newPlaying = data.playing;
                 newPlaying[1] = action.index;
                 return {
@@ -13,23 +13,24 @@ const reducer = (data = state, action: Action) => {
                 }
             }
             return data;
-        case 'togglePlay':
+        case 'TOGGLE_PLAY':
             const isPause = !data.suspended;
             return {
                 ...data,
                 suspended: isPause
             }
-        case 'startSong':
+        case 'START_SONG':
             return {
                 ...data,
                 suspended: false
             }
-        case 'pauseSong':
+        case 'PAUSE_SONG':
             return {
                 ...data,
                 suspended: true
             }
-        case 'updateMode':
+        case 'UPDATE_MODE':
+            if (action.message === undefined) return data;
             const options = ['none', 'random', 'cycle'];
             const correct = options.some((val: string) => val == action.message)
             if (correct) {
@@ -38,7 +39,8 @@ const reducer = (data = state, action: Action) => {
                     playingMode: action.message
                 }
             }
-        case 'follow':
+            return data
+        case 'FOLLOW':
             const index = data.playing[0];
             const newAlbums = JSON.parse(JSON.stringify(data.albums));
             let currentAlbum = JSON.parse(JSON.stringify(data.albums[data.playing[0]]));
@@ -49,24 +51,27 @@ const reducer = (data = state, action: Action) => {
                 ...data,
                 albums: newAlbums
             }
-        case 'changeAlbum':
+        case 'CHANGE_ALBUM':
+            if (action.index === undefined) return data;
             let newPlayings = data.playing;
             newPlayings[0] = action.index;
             return {
                 ...data,
                 playing: newPlayings
             }
-        case 'goPremium':
+        case 'GO_PREMIUM':
             return {
                 ...data,
                 advertise: false
             }
-        case 'changeAdvertiseState':
+        case 'CHANGE_ADVERTISE_STATE':
+            if (action.state === undefined) return data;
             return {
                 ...data,
                 openAdvertise: action.state
             }
-        case 'changeBarState':
+        case 'CHANGE_BAR_STATE':
+            if (action.state === undefined) return data;
             return {
                 ...data,
                 openBar: action.state

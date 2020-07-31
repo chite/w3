@@ -108,5 +108,5 @@ function Advertise(props: any) {
         </aside>
     )
 }
-
+export {Advertise};
 export default connect(null, mapDispatchToProps)(Advertise);

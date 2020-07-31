@@ -32,7 +32,7 @@ export interface AlbumsType {
 
 export interface Action{
     type: string;
-    index: number;
-    message: string;
-    state: boolean;
+    index?: number;
+    message?: string;
+    state?: boolean;
 }

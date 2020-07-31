@@ -12,7 +12,6 @@ function Music(props: any) {
     const [percentage, setPercentage] = useState(0);
 
     useEffect(() => {
-
         setPercentage(props.handleAudio.counting / albumData().songs[props.state.playing[1]].duration * 100)
     }, [props.handleAudio.counting])
 
@@ -137,4 +136,5 @@ function Music(props: any) {
     )
 }
 
+export {Music};
 export default connect(mapStateToProps)(Music);

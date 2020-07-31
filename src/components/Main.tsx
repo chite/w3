@@ -94,4 +94,5 @@ function Main(props: any) {
     )
 }
 
+export {Main};
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
